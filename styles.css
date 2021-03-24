@@ -1,0 +1,28 @@
+body{
+    background-image: url("https://i.pinimg.com/originals/59/e7/58/59e758cd94b6a989aa2cc7b4eeb68098.jpg");
+}
+
+table {
+	width:100%;
+  }
+  table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+  }
+  th, td {
+	padding: 1%;
+	text-align: center;
+  }
+  
+  tr {
+   background-color: #fff;
+  }
+  th {
+	background-color: black;
+	color: white;
+}
+
+.delete {
+    background-color: red;
+    color: white;
+}
