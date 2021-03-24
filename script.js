@@ -13,6 +13,8 @@ class App extends React.Component {
         return (
             <div>
                 <h1>Tasks</h1>
+                <br></br>
+                <br></br>
 
                 <table>
                     <tr>
@@ -28,13 +30,15 @@ class App extends React.Component {
                         </tr>
                     )}                   
                 </table>
-                <p> </p>
+                <br></br>
+                <br></br>
                 <div>
-                    <p>Number of Tasks: {this.state.tasks.length}</p>
+                    <h5>Number of Tasks: {this.state.tasks.length}</h5>
                 </div>
+                <br></br>
                 <div>
                     <input onChange={this.updateInput} value={this.state.input} />
-                    <button onClick={this.addTask}>Add Task</button>
+                    <button class="btn" onClick={this.addTask}>Add Task</button>
                 </div>
 
             </div>
