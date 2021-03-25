@@ -22,13 +22,15 @@ class App extends React.Component {
                         <th>Task</th> 
                         <th>Action</th>
                     </tr> */}
-                    {this.state.tasks.map((tasks,i) =>
-                        <tr key={i}>
-                            <td>{i+1}</td>
-                            <td>{tasks}</td>
-                            <td><button class="delete" onClick={() => { this.deleteTask(tasks)}}>X</button></td>
-                        </tr>
-                    )}                   
+                    <tbody>
+                        {this.state.tasks.map((tasks,i) =>
+                            <tr key={i}>
+                                <td>{i+1}</td>
+                                <td>{tasks}</td>
+                                <td><button class="delete" onClick={() => { this.deleteTask(tasks)}}>X</button></td>
+                            </tr>
+                        )}    
+                    </tbody>               
                 </table>
                 <br></br>
                 <br></br>
@@ -82,7 +84,7 @@ class App extends React.Component {
 
         setTimeout(() => {
             this.deleteTask(i)
-          }, 30000)
+          }, 5000)
       
 
     }
@@ -102,6 +104,7 @@ class App extends React.Component {
             this.setState({
                 tasks:JSON.parse(tasks)
             });
+
         }
         
     }
