@@ -233,7 +233,7 @@
 		}
 		
 		getStudents = () => {
-			fetch('') 
+			fetch('https://raw.githubusercontent.com/Pritish0173/todo-list/master/Tasks.json') 
 			.then(resp => resp.json())
 			.then(data => {
 				console.log(data);
