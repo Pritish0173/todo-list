@@ -5,6 +5,7 @@ class App extends React.Component {
         this.state = {
             tasks: [],
             input: "",
+            time: "",
 
         };
     }
@@ -17,11 +18,13 @@ class App extends React.Component {
                 <br></br>
 
                 <table>
-                    {/* <tr>
+                    <thead>
+                    <tr>
                         <th>S.No.</th>
                         <th>Task</th> 
                         <th>Action</th>
-                    </tr> */}
+                    </tr>
+                    </thead>
                     <tbody>
                         {this.state.tasks.map((tasks,i) =>
                             <tr key={i}>
@@ -39,7 +42,13 @@ class App extends React.Component {
                 </div>
                 <br></br>
                 <div>
-                    <input onChange={this.updateInput} value={this.state.input} />
+                    <input onChange={this.updateInput} value={this.state.input} /> Task
+                    <br></br>
+                    <br></br>
+                    <input type="datetime-local" onChange={this.updateTime} value={this.state.time} /> Time
+                    <br></br>
+                    <br></br>
+
                     <button class="btn" onClick={() => { this.addTask(this.state.input)}}>Add Task</button>
                     <button class="btn" onClick={this.updateTasks}>Update Task</button>
                 </div>
@@ -70,6 +79,12 @@ class App extends React.Component {
         });
     }
 
+    updateTime = (event) => {
+        this.setState({ 
+            time: event.target.value 
+        });
+    }
+
     addTask(i) {
         this.setState(state => ({
             tasks: [...state.tasks, state.input],
@@ -82,9 +97,11 @@ class App extends React.Component {
 
     startDelete(i){
 
+        // const timer = this.state.time;        
+
         setTimeout(() => {
             this.deleteTask(i)
-          }, 5000)
+          }, 10000)
       
 
     }
